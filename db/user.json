@@ -1,0 +1,34 @@
+[
+  {
+    "token": "a460d33840506cb4ac272e710ac18402",
+    "username": "13400000000",
+    "nickname": "测试者",
+    "password": "123",
+    "tip": "",
+    "score": 14
+  },
+  {
+    "token": "b3dedb27409a6a1208514fcc4c5a6061",
+    "phone": "13699221566",
+    "nickname": "编程小能手",
+    "password": "123",
+    "tip": "",
+    "score": 22
+  },
+  {
+    "token": "34885b34693c5cc18007faaf95dbf262",
+    "phone": "18039755762",
+    "nickname": "小男人",
+    "password": "123",
+    "tip": "",
+    "score": 100
+  },
+  {
+    "token": "55c6158fc90a93e3379f3383940c15c3",
+    "phone": "13269307059",
+    "nickname": "自大",
+    "password": "123",
+    "tip": "",
+    "score": 102
+  }
+]
