@@ -1,13 +1,16 @@
 let fs = require('fs');
 
 const link = './db/user.json';
-let = userList = [];
+let userList = [];
 fs.readFile(link, (err, data) => {
 	userList = JSON.parse(data.toString());
 });
+let writeFile = () => {
+	let text = JSON.stringify(userList, null, 2);
+	fs.writeFile(link, text);
+}
 
 exports.getUserList = () => userList;
-
 exports.getInfoByPhone = phone => {
 	let info = null;
 	userList.forEach(o => {
@@ -15,7 +18,6 @@ exports.getInfoByPhone = phone => {
 	});
 	return info;
 }
-
 exports.getInfoByToken = token => {
 	let info = null;
 	userList.forEach(o => {
@@ -23,20 +25,13 @@ exports.getInfoByToken = token => {
 	});
 	return info;
 }
-
 exports.updateInfoByPhone = (phone, info) => {
 	userList.forEach((o, i) => {
 		if (o.phone === phone) userList[i] = info;
 	});
-	updateFile();
+	writeFile();
 }
 exports.updateUserList = list => {
 	userList = list;
-	updateFile();
-}
-
-
-function updateFile () {
-	let text = JSON.stringify(userList, null, 2);
-	fs.writeFile(link, text);
+	writeFile();
 }
