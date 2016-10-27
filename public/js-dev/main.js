@@ -1,4 +1,9 @@
-let url = 'ws://localhost:9000?token='+ location.search.split('?')[1]; 
+let tip = require('./util/tip');
+let q = require('./util/q');
+
+let token = q('token');
+let url = 'ws://localhost:9000?token='+ token; 
+// let url = 'ws://localhost:9000?token='+ location.search.split('?')[1]; 
 let ws = new WebSocket(url);
 let send = (type, content) => ws.send(JSON.stringify({type, content}));
 
