@@ -2,3 +2,140 @@
 .text-ok{color:green;}
 .text-warn{color:orange;}
 .text-danger{color:red;}
+
+body{
+	background-color:#333;
+	background-image: radial-gradient(farthest-corner at 50% 50%, #008000 0%, #001001 100%);
+}
+
+.main-box{}
+.main-screen{}
+.main-fn{
+	position:absolute;
+	top:10px; right:10px; width:30px; height:80px;
+}
+.main-fn>li{
+	width:30px; height:30px;
+	margin-bottom:10px;
+	background-size:contain;
+}
+
+.main-menu{background-image:url(../img/menu.png);}
+.main-speak{background-image:url(../img/speak.png);}
+
+.main-table{}
+.main-seats{display:none;}
+.main-player{}
+.main-head{}
+.main-name{}
+.main-score{}
+.main-status{}
+.main-cards{}
+
+
+.main-card{}
+
+.main-hand{
+	position:absolute;
+	left:0; right:0; bottom:50px; width:100px; height:60px;
+	margin:auto;
+}
+.main-card{
+	float:left;
+	width:40%; height:100%;
+	padding-left:5%; border-radius:3px; margin-right:5%;
+	background:url(../img/back.jpg) no-repeat;
+	background-size:contain;
+	font-size:22px; font-weight:bold;
+}
+.main-card.heart,
+.main-card.diamond,
+.main-card.spade,
+.main-card.clover{
+	background:white no-repeat 70% 80%;
+	background-size:55%;
+}
+.main-card.heart,
+.main-card.diamond{color:#98120f;}
+.main-card.spade,
+.main-card.clover{color:black;}
+.main-card.heart{background-image:url(../img/heart.png);}
+.main-card.diamond{background-image:url(../img/diamond.png);}
+.main-card.spade{background-image:url(../img/spade.png);}
+.main-card.clover{background-image:url(../img/clover.png);}
+
+.main-wait{
+	position:absolute;
+	bottom:10px; left:10px; height:40px;
+}
+.main-wait>li{
+	float:left; overflow:hidden;
+	width:40px; height:40px;
+	border-radius:50%; margin-right:5px;
+}
+.main-ctrl{
+	position:absolute;
+	bottom:10px; right:10px; height:30px;
+}
+.main-ctrl>li{
+	float:right;
+	width:50px; height:30px; line-height:30px;
+	border-radius:3px; margin-left:10px;
+	background-color:#256dad; color:white;
+	text-align:center;
+}
+li.main-begin,
+li.main-drop,
+li.main-confirm{background-color:#98120f;}
+li.main-bet{
+	float:none; position:absolute;
+	right:0; bottom:100%; width:100px; height:50px; line-height:50px;
+	background-color:transparent;
+	font-size:16px; text-align:right;
+}
+
+.menu-box{background-color:rgba(0,0,0,.2);}
+.menu-box>ul{
+	position:absolute;
+	top:0; right:0; width:200px; height:100%;
+	background-color:white;
+}
+.menu-box>ul>li{
+	height:50px; line-height:50px;
+	padding-left:50px; border-bottom:1px solid #eee;
+}
+
+
+.speak-box{background-color:rgba(0,0,0,.2);}
+.speak-wrap{
+	position:absolute;
+	top:0; left:0; width:100%; height:50px;
+	background-color:white;
+}
+.speak-inner{
+	position:relative;
+	top:10px; width:400px; height:30px;
+	margin:0 auto;
+}
+.speak-inner>*{
+	position:absolute;
+	top:0; height:30px; line-height:30px;
+}
+.speak-input{
+	left:0; width:260px; height:28px; line-height:28px;
+	padding:0 10px; border:1px solid #ccc;
+}
+.speak-inner>div{
+	width:50px;
+	border-radius:3px;
+	color:white;
+	text-align:center;
+}
+.speak-submit{
+	right:60px;
+	background-color:#256dad;
+}
+.speak-x{
+	right:0;
+	background-color:#98120f;
+}

@@ -9,17 +9,134 @@
 <meta http-equiv="Expires" content="0">
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/main.css">
-<title></title>
+<title>fishing</title>
 </head>
 <body class="full">
-	<div class="main-name"></div>
-	<!-- <div class="game-show">亮牌</div> -->
-	<input type="text" class="main-input" />
-	<span class="main-speak">发言</span>
-	<div class="main-begin">开始</div>
-	<div class="main-board"></div>
-	<!-- <div class="game-drop">弃牌</div> -->
+<section class="main-box">
+	<div class="main-screen hide"></div>
+	<ul class="main-fn">
+		<li class="main-menu"></li>
+		<li class="main-speak"></li>
+	</ul>	
+	<div class="main-table">
+		<ul class="main-seats">
+			<li class="main-player">
+				<div class="main-head">
+					<img src="../img/b3dedb27409a6a1208514fcc4c5a6061.jpg">
+				</div>
+				<div class="main-name">编程小能手</div>
+				<div class="main-score">22</div>
+				<div class="main-status">5</div>
+				<div class="main-cards">
+					<div class="main-card"></div>
+					<div class="main-card"></div>
+				</div>
+			</li>
+			<li class="main-player">
+				<div class="main-head">
+					<img src="../img/b3dedb27409a6a1208514fcc4c5a6061.jpg">
+				</div>
+				<div class="main-name">编程小能手</div>
+				<div class="main-score">22</div>
+				<div class="main-status">2</div>
+				<div class="main-cards">
+					<div class="main-card"></div>
+					<div class="main-card"></div>
+				</div>
+				<div class="main-timer">30</div>
+			</li>
+			<li class="main-player drop">
+				<div class="main-head">
+					<img src="../img/b3dedb27409a6a1208514fcc4c5a6061.jpg">
+				</div>
+				<div class="main-name">编程小能手</div>
+				<div class="main-score">22</div>
+				<div class="main-status">0</div>
+				<div class="main-cards">
+					<div class="main-card"></div>
+					<div class="main-card"></div>
+				</div>
+			</li>
+			<li class="main-player quit">
+				<div class="main-head">
+					<img src="../img/b3dedb27409a6a1208514fcc4c5a6061.jpg">
+				</div>
+				<div class="main-name">编程小能手</div>
+				<div class="main-score">22</div>
+				<div class="main-status">10</div>
+				<div class="main-cards">
+					<div class="main-card"></div>
+					<div class="main-card"></div>
+				</div>
+			</li>
+			<li class="main-player">
+				<div class="main-head">
+					<img src="../img/b3dedb27409a6a1208514fcc4c5a6061.jpg">
+				</div>
+				<div class="main-name">编程小能手</div>
+				<div class="main-score">22</div>
+				<div class="main-status">10</div>
+				<div class="main-cards">
+					<div class="main-card"></div>
+					<div class="main-card"></div>
+				</div>
+			</li>
+			<li class="main-player">
+				<div class="main-head">
+					<img src="../img/b3dedb27409a6a1208514fcc4c5a6061.jpg">
+				</div>
+				<div class="main-name">编程小能手</div>
+				<div class="main-score">22</div>
+				<div class="main-status">10</div>
+				<div class="main-cards">
+					<div class="main-card"></div>
+					<div class="main-card"></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<ul class="main-hand">
+		<li class="main-card heart">A</li>
+		<li class="main-card spade">J</li>
+	</ul>
+	<ul class="main-wait">
+		<li>
+			<img src="../img/34885b34693c5cc18007faaf95dbf262.jpg">
+		</li>
+		<li>
+			<img src="../img/b3dedb27409a6a1208514fcc4c5a6061.jpg">
+		</li>
+	</ul>
+	<ul class="main-ctrl">
+		<li class="main-begin">开始</li>
+		<li class="main-confirm">确定</li>
+		<li class="main-drop">弃牌</li>
+		<li class="main-all-in">冲底</li>
+		<li class="main-cut">减注</li>
+		<li class="main-add">加注</li>
+		<li class="main-bet">加注 0</li>
+	</ul>
+</section>
+
+<section class="menu-box hide">
+	<ul>
+		<li class="menu-update-password">修改密码</li>
+		<li class="menu-quit">退出</li>
+	</ul>
+</section>
+
+<section class="speak-box hide">
+	<div class="speak-wrap">
+		<div class="speak-inner">
+			<input type="text" class="speak-input" placeholder="请发言.." />
+			<div class="speak-submit">发送</div>
+			<div class="speak-x">关闭</div>
+		</div>
+	</div>
+</section>
+
 </body>
 </script>
-<script src="../js/main.js"></script>
+<script src="../vendor/lib.js"></script>
+<!-- <script src="../js/main.js"></script> -->
 </html>
