@@ -103,18 +103,22 @@ body{
 .main-card.heart,
 .main-card.diamond,
 .main-card.spade,
-.main-card.clover{
+.main-card.club{
 	background:white no-repeat 70% 80%;
 	background-size:55%;
 }
 .main-card.heart,
 .main-card.diamond{color:#98120f;}
 .main-card.spade,
-.main-card.clover{color:black;}
+.main-card.club{color:black;}
+.main-card.joker-1,
+.main-card.joker-2{color:transparent;}
 .main-card.heart{background-image:url(../img/heart.png);}
 .main-card.diamond{background-image:url(../img/diamond.png);}
 .main-card.spade{background-image:url(../img/spade.png);}
-.main-card.clover{background-image:url(../img/clover.png);}
+.main-card.club{background-image:url(../img/club.png);}
+.main-card.joker1{background-image:url(../img/joker1.jpg);}
+.main-card.joker2{background-image:url(../img/joker2.jpg);}
 
 .main-wait{
 	position:absolute;
