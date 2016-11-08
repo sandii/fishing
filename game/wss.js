@@ -2,7 +2,6 @@ let WebSocketServer = require('ws').Server;
 let querystring = require('querystring');
 let userModel = require('../model/user');
 let broadcast = require('./broadcast');
-let send = require('./send');
 let round = require('./round');
 
 
@@ -30,8 +29,16 @@ function handleConnection (ws) {
     ws.info = userInfo;
 
     let len = wss.clients.length;
-    send(ws, 'text-ok', `Welcome! No.${len} player.`);
-    broadcast(wss, 'text-ok', `${userInfo.nickname} join the game!`);
+    ws.send({
+        type : 'text',
+        info : 'ok',
+        content : `Welcome! No.${len} player.`
+    });
+    broadcast(wss, {
+        type : 'text',
+        info : 'ok',
+        content : `${userInfo.nickname} join the game!`
+    });
 
     bindClientMsg(ws);
     bindClientClose(ws);
@@ -43,13 +50,20 @@ function bindClientMsg (ws) {
             round.begin(wws);
         }
         if (data.type === 'speak') {
-            let speech = `${ws.info.nickname} : ${data.content}`;
-            broadcast(wss, 'text', speech);
+            broadcast(wss, {
+                type : 'text',
+                info : '',
+                content : `${ws.info.nickname} : ${data.content}`
+            });
         }
     });
 }
 function bindClientClose (ws) {
     ws.on('close', () => {
-        broadcast(wss, 'text-danger', `${ws.info.nickname} quit..`);
+        broadcast(wss, {
+            type : 'text',
+            info : 'danger',
+            content : `${ws.info.nickname} quit..`
+        });
     });	
 }

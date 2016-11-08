@@ -1,6 +1,5 @@
 let userModel = require('../model/user');
 let broadcast = require('./broadcast');
-let send = require('./send');
 let Deck = require('./deck');
 let wss = null;
 let deck = new Deck().shuffle().shuffle();
@@ -9,17 +8,29 @@ exports.begin = function (_wss) {
     wss = _wss;
     wss.players = wss.clients.slice();
     if (wss.players.length < 2) {
-        broadcast(wss, 'text', `等待其他玩家..`);
+        broadcast(wss, {
+            type : 'text',
+            info : '',
+            content : '等待其他玩家..'
+        });
         return;
     }
-    broadcast(wss, 'text-ok', '游戏开始!');
+    broadcast(wss, {
+        type : 'text',
+        info : 'ok',
+        content : '游戏开始!'
+    });
     serve();
     compare();
 }
 function serve () {
     var n = wss.players.length * 2;
     if (deck.cards.length < n) {
-        broadcast(wss, 'text', `重新洗牌`);
+        broadcast(wss, {
+            type : 'text',
+            info : '',
+            content : '重新洗牌'
+        });
         deck = new Deck().shuffle().shuffle();
     }
     let deal = deck.deal(n);
@@ -28,8 +39,11 @@ function serve () {
         let hand = deal.splice(0, 2);
         let token = client.info.token;
         wss.hands[token] = hand;
-        let cardInfo = {token, hand};
-        send(wss, client, 'card', JSON.stringify(cardInfo));
+        client.send({
+            type : 'card',
+            info : '',
+            content : [{ token, hand }]
+        });
     });
 }
 function compare () {
@@ -46,12 +60,18 @@ function compare () {
     settle(winner.info.token);
 }
 function announce (winner) {
-    let winnerTip = `you win, score +${wss.players.length - 1}`;
-    let loserTip = `${winner.info.nickname} wins, your score -1`;
-    send(winner, 'text-ok', winnerTip);
+    winner.send({
+        type : 'text',
+        info : 'ok',
+        content : `you win, score +${wss.players.length - 1}`
+    });
     wss.players.forEach(player => {
         if (player === winner) return;
-        send(player, 'text-warn', loserTip);
+        player.send(wss, {
+            type : 'text',
+            info : 'warn',
+            content : `${winner.info.nickname} wins, your score -1`
+        });
     });
 }
 function settle (winnerToken) {
