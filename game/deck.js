@@ -20,7 +20,7 @@ class Deck () {
 		return this;
 	}
 	deal (n) {
-		if (this.cards.length < n) throw "Out of cards";
+		if (this.cards.length < n) return [];
 		return this.cards.splice(this.cards.length - n, n);
 	}
 }
